@@ -1,0 +1,39 @@
+.containerInput {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: -27px;
+}
+
+.containerInput input {
+    width: 538px;
+    height: 54px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-700);
+    background: var(--gray-500);
+    color: var(--gray-100);
+    padding: 16px;
+}
+
+.containerInput button {
+    width: 90px;
+    height: 52px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-700);
+    background: var(--blue-dark);
+    color: var(--gray-100);
+    padding: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.containerInput button:hover {
+    background: var(--blue);
+}
