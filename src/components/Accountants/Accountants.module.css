@@ -1,0 +1,30 @@
+
+.taskCount {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+
+}
+
+.taskCount div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.taskCount p {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--blue);
+}
+
+.taskCount p.concluded {
+    color: var(--purple);
+}
+
+.taskCount span {
+    background-color: var(--gray-400);
+    color: var(--gray-200);
+    padding: 0.125rem 0.5rem;
+    border-radius: 999px;
+}
