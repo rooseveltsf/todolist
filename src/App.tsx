@@ -33,13 +33,23 @@ function App() {
     }
   ])
 
+  function handleTaskCompleted(taskId: string) {
+    const updatedTasks = tasks.map(task => {
+      if (task.id === taskId) {
+        return { ...task, completed: !task.completed }
+      }
+      return task
+    })
+    setTasks(updatedTasks)
+  }
+
   return (
     <>
       <Header />
       <TaskForm />
       <div className={AppStyles.wrapper}>
         <Accountants tasks={tasks} />        
-        <TaskList />
+        <TaskList tasks={tasks} onTaskCompleted={handleTaskCompleted} />
       </div>
     </>
   )
