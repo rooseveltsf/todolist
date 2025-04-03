@@ -1,11 +1,11 @@
 
 import { PlusCircle } from '@phosphor-icons/react'
-import InputStyles from './Input.module.css'
+import TaskFormStyles from './TaskForm.module.css'
 
 function Input() {
 
     return (
-        <div className={InputStyles.containerInput}>
+        <div className={TaskFormStyles.containerInput}>
             <input type="text" placeholder='Adicione uma nova tarefa' />
             <button>
                 Criar
