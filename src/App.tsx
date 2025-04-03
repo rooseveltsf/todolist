@@ -1,11 +1,10 @@
-import './global.css'
-
 import Header from './components/Header'
 import TaskForm from './components/TaskForm'
-import EmptyList from './components/EmptyList'
 import Accountants from './components/Accountants'
+import TaskList from './components/TaskList'
 
 import AppStyles from './App.module.css'
+import './global.css'
 
 function App() {
 
@@ -14,9 +13,8 @@ function App() {
       <Header />
       <TaskForm />
       <div className={AppStyles.wrapper}>
-        <Accountants />
-
-        <EmptyList />
+        <Accountants />        
+        <TaskList />
       </div>
     </>
   )
