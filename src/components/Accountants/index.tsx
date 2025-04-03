@@ -1,16 +1,24 @@
+import { Task } from '../../App';
 import AccountantsStyles from './Accountants.module.css'
 
-function Accountants() {
+interface AccountantsProps {
+    tasks: Array<Task>
+}
+
+function Accountants({ tasks }: AccountantsProps) {
+    const totalTasks = tasks.length
+    const concludedTasks = tasks.filter(task => task.completed).length
+
     return (
         <div className={AccountantsStyles.taskCount}>
             <div>
                 <p>Tarefas criadas</p>
-                <span>0</span>
+                <span>{totalTasks}</span>
             </div>
 
             <div>
                 <p className={AccountantsStyles.concluded}>Concluídas</p>
-                <span>0</span>
+                <span>{concludedTasks}</span>
             </div>
         </div>
     )
