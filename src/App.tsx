@@ -15,23 +15,7 @@ export interface Task {
 }
 
 function App() {
-  const [tasks, setTasks] = useState<Array<Task>>([
-    {
-      id: '1',
-      title: 'Estudar React',
-      completed: false
-    },
-    {
-      id: '2',
-      title: 'Estudar Node.js',
-      completed: true
-    },
-    {
-      id: '3',
-      title: 'Estudar TypeScript',
-      completed: false
-    }
-  ])
+  const [tasks, setTasks] = useState<Array<Task>>([])
 
   function handleTaskCompleted(taskId: string) {
     const updatedTasks = tasks.map(task => {
@@ -43,10 +27,20 @@ function App() {
     setTasks(updatedTasks)
   }
 
+  function handleTaskCreated(taskTitle: string) {
+    const newTask = {
+      id: crypto.randomUUID(),
+      title: taskTitle,
+      completed: false
+    }
+    setTasks([...tasks, newTask])
+  }
+
+
   return (
     <>
       <Header />
-      <TaskForm />
+      <TaskForm onTaskCreated={handleTaskCreated} />
       <div className={AppStyles.wrapper}>
         <Accountants tasks={tasks} />        
         <TaskList tasks={tasks} onTaskCompleted={handleTaskCompleted} />
