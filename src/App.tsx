@@ -36,6 +36,11 @@ function App() {
     setTasks([...tasks, newTask])
   }
 
+  function handleTaskDeleted(taskId: string) {
+    const updatedTasks = tasks.filter(task => task.id !== taskId)
+    setTasks(updatedTasks)
+  }
+
 
   return (
     <>
@@ -43,7 +48,7 @@ function App() {
       <TaskForm onTaskCreated={handleTaskCreated} />
       <div className={AppStyles.wrapper}>
         <Accountants tasks={tasks} />        
-        <TaskList tasks={tasks} onTaskCompleted={handleTaskCompleted} />
+        <TaskList tasks={tasks} onTaskCompleted={handleTaskCompleted} onTaskDeleted={handleTaskDeleted} />
       </div>
     </>
   )
